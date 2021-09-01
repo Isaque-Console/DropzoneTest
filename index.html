@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./dist/dropzone.css"/>
+    <title>Document</title>
+</head>
+<body>
+    <!-- <form action="localhost:4000/file-upload" class="dropzone" id="my-awesome-dropzone" enctype="multipart/form-data" method="POST">
+      <div>
+          <input type="file" name="file"/>
+      </div>
+    </form> -->
+    <input type="button" value="Enviar pdf" id="teste">
+</body>
+<script>
+    var idTeste = document.getElementById("teste")
+    idTeste.onclick = function() {
+        let drop = document.getElementById("MyDrop")
+        fetch("http://localhost:4000/file-upload",{
+            method: 'POST'
+        })
+        .then((response) => {
+            console.log(response)
+        })
+    }
+</script>
+
+</html>
